@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Contact — Vukona Mudanisi</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- PWA Manifest -->
+  <link rel="manifest" href="manifest.json">
+  <meta name="theme-color" content="#2563eb">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <a href="index.html" class="brand">Vukona Mudanisi</a>
+      <nav class="nav">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="projects.html">Projects</a>
+        <a href="contact.html" class="active">Contact</a>
+        <a class="cv-btn" href="assets/Vukona_Mudanisi_cv.pdf" download>Download CV</a>
+        <button class="theme-toggle" aria-label="Toggle theme">
+          <svg class="sun" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"/>
+          </svg>
+          <svg class="moon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"/>
+          </svg>
+        </button>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <div class="content fade-in" data-scroll>
+      <h1>Vukona Mudanisi</h1>
+      
+      <h2>Get in Touch</h2>
+      <p>I'm always interested in new opportunities, collaborations, and discussions about technology. Feel free to reach out directly via email or use the contact form below.</p>
+      
+      <div class="contact-info-grid">
+        <div class="contact-method">
+          <div class="contact-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+              <polyline points="22,6 12,13 2,6"/>
+            </svg>
+          </div>
+          <div class="contact-details">
+            <h3>Email</h3>
+            <a href="mailto:vukonamdanisi6@gmail.com">vukonamdanisi6@gmail.com</a>
+          </div>
+        </div>
+
+        <div class="contact-method">
+          <div class="contact-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+            </svg>
+          </div>
+          <div class="contact-details">
+            <h3>Phone</h3>
+            <a href="tel:0661387363">066 138 7363</a>
+          </div>
+        </div>
+
+        <div class="contact-method">
+          <div class="contact-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+              <circle cx="12" cy="10" r="3"/>
+            </svg>
+          </div>
+          <div class="contact-details">
+            <h3>Location</h3>
+            <p>Freedom Park, Devland, South Africa</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="form-note">
+        <p>For the contact form to work, please host this site on a server with PHP enabled.</p>
+      </div>
+
+      <form action="contact.php" method="post" class="contact-form">
+        <div class="form-group">
+          <label for="name">Name</label>
+          <input type="text" id="name" name="name" required placeholder="Your full name">
+        </div>
+
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" required placeholder="your.email@example.com">
+        </div>
+
+        <div class="form-group">
+          <label for="message">Message</label>
+          <textarea id="message" name="message" rows="6" required placeholder="Tell me about your project or inquiry..."></textarea>
+        </div>
+
+        <button type="submit" class="cta submit-btn">
+          Send Message
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z"/>
+          </svg>
+        </button>
+      </form>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>© 2025 Vukona Mudanisi</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,148 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Projects — Vukona Mudanisi</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- PWA Manifest -->
+  <link rel="manifest" href="manifest.json">
+  <meta name="theme-color" content="#2563eb">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <a href="index.html" class="brand">Vukona Mudanisi</a>
+      <nav class="nav">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="projects.html" class="active">Projects</a>
+        <a href="contact.html">Contact</a>
+        <a class="cv-btn" href="assets/Vukona_Mudanisi_cv.pdf" download>Download CV</a>
+        <button class="theme-toggle" aria-label="Toggle theme">
+          <svg class="sun" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"/>
+          </svg>
+          <svg class="moon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"/>
+          </svg>
+        </button>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container projects">
+    <div class="content fade-in" data-scroll>
+      <h2>My Projects</h2>
+      <p>Here are some of the projects I've worked on, showcasing my skills in full-stack development, mobile applications, and software engineering.</p>
+    </div>
+
+    <!-- Project Filter -->
+    <div class="project-filter" data-scroll>
+      <button class="filter-btn active" data-filter="all">All Projects</button>
+      <button class="filter-btn" data-filter="web">Web Development</button>
+      <button class="filter-btn" data-filter="ai">AI/ML</button>
+      <button class="filter-btn" data-filter="mobile">Mobile</button>
+      <button class="filter-btn" data-filter="python">Python</button>
+    </div>
+
+    <!-- Projects -->
+    <article class="project fade-in" data-category="ai python">
+      <img src="assets/project.svg" alt="Lung Cancer Detection AI System" />
+      <div class="project-info">
+        <h3>Lung Cancer Detection AI System</h3>
+        <p>An advanced machine learning system that analyzes medical imaging data to assist in early lung cancer detection. Built with Python, TensorFlow, and computer vision algorithms to provide accurate predictions and support healthcare professionals.</p>
+        <div class="tech-tags">
+          <span class="tech-tag">Python</span>
+          <span class="tech-tag">TensorFlow</span>
+          <span class="tech-tag">Machine Learning</span>
+          <span class="tech-tag">Computer Vision</span>
+          <span class="tech-tag">OpenCV</span>
+        </div>
+        <div class="project-links">
+          <a href="https://github.com/SmartCode-AI/Lung_Cancer_Portfolio" target="_blank" class="project-link">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/>
+            </svg>
+            View on GitHub
+          </a>
+        </div>
+      </div>
+    </article>
+
+    <article class="project fade-in" data-category="web">
+      <img src="assets/project.svg" alt="Gourmet Delights Restaurant Website" />
+      <div class="project-info">
+        <h3>Gourmet Delights Restaurant</h3>
+        <p>A comprehensive restaurant website and management system for Gourmet Delights, established in 2018. Features online reservations, menu management, and e-commerce functionality. Built to showcase their commitment to fresh local ingredients and world-class flavors.</p>
+        <div class="tech-tags">
+          <span class="tech-tag">React</span>
+          <span class="tech-tag">Node.js</span>
+          <span class="tech-tag">MongoDB</span>
+          <span class="tech-tag">E-commerce</span>
+          <span class="tech-tag">Responsive Design</span>
+        </div>
+        <div class="project-details">
+          <p><strong>Location:</strong> SE7 Barrage Road, Vanderbijlpark</p>
+          <p><strong>Specialty:</strong> Fresh local ingredients, hand-picked daily</p>
+        </div>
+      </div>
+    </article>
+
+    <article class="project fade-in" data-category="web">
+      <img src="assets/project.svg" alt="Student Information Management System thumbnail" />
+      <div class="project-info">
+        <h3>Student Information Management System</h3>
+        <p>Web-based system built with React (frontend) and Node.js (backend) to manage student records, timetables, and academic performance. Includes UML diagrams and MySQL database.</p>
+        <div class="tech-tags">
+          <span class="tech-tag">React</span>
+          <span class="tech-tag">Node.js</span>
+          <span class="tech-tag">MySQL</span>
+          <span class="tech-tag">UML</span>
+        </div>
+      </div>
+    </article>
+
+    <article class="project fade-in" data-category="web python">
+      <img src="assets/project.svg" alt="E-Commerce Platform thumbnail" />
+      <div class="project-info">
+        <h3>E-Commerce Platform</h3>
+        <p>Full-stack e-commerce application with authentication, product catalogue, cart, and payment integration. Built using Django (backend) and PostgreSQL.</p>
+        <div class="tech-tags">
+          <span class="tech-tag">Django</span>
+          <span class="tech-tag">PostgreSQL</span>
+          <span class="tech-tag">Python</span>
+          <span class="tech-tag">JavaScript</span>
+        </div>
+      </div>
+    </article>
+
+    <article class="project fade-in" data-category="mobile">
+      <img src="assets/project.svg" alt="Mobile Expense Tracker thumbnail" />
+      <div class="project-info">
+        <h3>Mobile Expense Tracker</h3>
+        <p>Cross-platform mobile app using React Native. Tracks expenses, categorizes spending and generates budget reports with interactive charts and analytics.</p>
+        <div class="tech-tags">
+          <span class="tech-tag">React Native</span>
+          <span class="tech-tag">Firebase</span>
+          <span class="tech-tag">Chart.js</span>
+          <span class="tech-tag">Mobile</span>
+        </div>
+      </div>
+    </article>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>© 2025 Vukona Mudanisi</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
