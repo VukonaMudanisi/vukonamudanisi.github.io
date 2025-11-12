@@ -1,148 +1,810 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <meta name="description" content="Vukona Mudanisi - IT Professional & Developer Portfolio. Diploma in Information Technology student specializing in web development, mobile apps, and software solutions." />
-  <title>Vukona Mudanisi — IT Professional & Developer</title>
-  <link rel="stylesheet" href="styles.css" />
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  
-  <!-- PWA Manifest -->
-  <link rel="manifest" href="manifest.json">
-  <meta name="theme-color" content="#2563eb">
-  <meta name="apple-mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vukona Mudanisi - Portfolio</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        :root {
+            --primary: #2c3e50;
+            --secondary: #34495e;
+            --accent: #3498db;
+            --success: #2ecc71;
+            --text-light: #ecf0f1;
+            --text-dark: #2c3e50;
+        }
+        
+        body {
+            background-color: #f5f7fa;
+            color: var(--text-dark);
+            line-height: 1.6;
+            scroll-behavior: smooth;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header Styles */
+        header {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            color: white;
+            padding: 100px 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .header-content {
+            position: relative;
+            z-index: 2;
+        }
+        
+        .profile-img {
+            width: 160px;
+            height: 160px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 5px solid rgba(255, 255, 255, 0.3);
+            margin-bottom: 25px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+        
+        h1 {
+            font-size: 3rem;
+            margin-bottom: 15px;
+            font-weight: 700;
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+        }
+        
+        .tagline {
+            font-size: 1.4rem;
+            opacity: 0.9;
+            max-width: 700px;
+            margin: 0 auto 35px;
+            font-weight: 300;
+        }
+        
+        .btn {
+            display: inline-block;
+            background: var(--accent);
+            color: white;
+            padding: 14px 35px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: 2px solid var(--accent);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .btn:hover {
+            background: transparent;
+            color: var(--accent);
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+        }
+        
+        .btn-outline {
+            background: transparent;
+            border: 2px solid white;
+            margin-left: 15px;
+        }
+        
+        .btn-outline:hover {
+            background: white;
+            color: var(--primary);
+        }
+        
+        /* Navigation */
+        nav {
+            background: white;
+            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            transition: all 0.3s ease;
+        }
+        
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 18px 0;
+        }
+        
+        .logo {
+            font-size: 1.6rem;
+            font-weight: 700;
+            color: var(--primary);
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+        
+        .nav-links li {
+            margin-left: 35px;
+        }
+        
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-dark);
+            font-weight: 500;
+            transition: color 0.3s ease;
+            position: relative;
+            padding: 5px 0;
+        }
+        
+        .nav-links a:after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: 0;
+            left: 0;
+            background-color: var(--accent);
+            transition: width 0.3s ease;
+        }
+        
+        .nav-links a:hover:after {
+            width: 100%;
+        }
+        
+        .nav-links a:hover {
+            color: var(--accent);
+        }
+        
+        /* Section Styles */
+        section {
+            padding: 90px 0;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+        
+        .section-title h2 {
+            font-size: 2.4rem;
+            color: var(--primary);
+            margin-bottom: 15px;
+            position: relative;
+            display: inline-block;
+        }
+        
+        .section-title h2:after {
+            content: '';
+            position: absolute;
+            width: 70px;
+            height: 3px;
+            background: var(--accent);
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        
+        .section-title p {
+            color: #7f8c8d;
+            max-width: 600px;
+            margin: 20px auto 0;
+            font-size: 1.1rem;
+        }
+        
+        /* About Section */
+        .about-content {
+            display: flex;
+            align-items: center;
+            gap: 60px;
+        }
+        
+        .about-text {
+            flex: 1;
+        }
+        
+        .about-text h3 {
+            font-size: 1.9rem;
+            margin-bottom: 25px;
+            color: var(--primary);
+        }
+        
+        .about-text p {
+            margin-bottom: 20px;
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+        
+        .skills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-top: 25px;
+        }
+        
+        .skill-tag {
+            background: var(--accent);
+            color: white;
+            padding: 8px 18px;
+            border-radius: 50px;
+            font-size: 0.95rem;
+            transition: transform 0.3s ease;
+        }
+        
+        .skill-tag:hover {
+            transform: translateY(-3px);
+        }
+        
+        /* Education Section */
+        .education-section {
+            background: #f8f9fa;
+        }
+        
+        .education-timeline {
+            max-width: 850px;
+            margin: 0 auto;
+        }
+        
+        .timeline-item {
+            background: white;
+            border-radius: 12px;
+            padding: 35px;
+            margin-bottom: 30px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+            border-left: 5px solid var(--accent);
+            transition: transform 0.3s ease;
+        }
+        
+        .timeline-item:hover {
+            transform: translateY(-5px);
+        }
+        
+        .timeline-item h3 {
+            font-size: 1.5rem;
+            margin-bottom: 12px;
+            color: var(--primary);
+        }
+        
+        .timeline-meta {
+            color: #7f8c8d;
+            margin-bottom: 18px;
+            font-size: 1rem;
+            display: flex;
+            align-items: center;
+        }
+        
+        .timeline-meta:before {
+            content: '📅';
+            margin-right: 8px;
+        }
+        
+        .gpa-badge {
+            display: inline-block;
+            background: var(--success);
+            color: white;
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            margin-left: 15px;
+            font-weight: 600;
+        }
+        
+        /* Projects Section */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 35px;
+        }
+        
+        .project-card {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+            transition: all 0.3s ease;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .project-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+        }
+        
+        .project-img {
+            height: 200px;
+            background: linear-gradient(135deg, var(--accent) 0%, #2980b9 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 3.5rem;
+        }
+        
+        .project-content {
+            padding: 25px;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .project-content h3 {
+            font-size: 1.4rem;
+            margin-bottom: 12px;
+            color: var(--primary);
+        }
+        
+        .project-content p {
+            margin-bottom: 20px;
+            flex-grow: 1;
+        }
+        
+        .project-links {
+            display: flex;
+            margin-top: auto;
+        }
+        
+        .project-link {
+            margin-right: 20px;
+            color: var(--accent);
+            text-decoration: none;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            transition: all 0.3s ease;
+        }
+        
+        .project-link:hover {
+            color: #2980b9;
+            transform: translateX(5px);
+        }
+        
+        .project-link:after {
+            content: '→';
+            margin-left: 5px;
+            transition: transform 0.3s ease;
+        }
+        
+        .project-link:hover:after {
+            transform: translateX(3px);
+        }
+        
+        /* Contact Section */
+        .contact-section {
+            background: #f8f9fa;
+        }
+        
+        .contact-container {
+            display: flex;
+            gap: 60px;
+        }
+        
+        .contact-info {
+            flex: 1;
+        }
+        
+        .contact-method {
+            display: flex;
+            align-items: center;
+            margin-bottom: 30px;
+            padding: 20px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s ease;
+        }
+        
+        .contact-method:hover {
+            transform: translateY(-5px);
+        }
+        
+        .contact-icon {
+            width: 60px;
+            height: 60px;
+            background: var(--accent);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 20px;
+            color: white;
+            font-size: 1.5rem;
+            flex-shrink: 0;
+        }
+        
+        .contact-details h3 {
+            font-size: 1.3rem;
+            margin-bottom: 5px;
+            color: var(--primary);
+        }
+        
+        .contact-form {
+            flex: 1;
+            background: white;
+            padding: 35px;
+            border-radius: 12px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+        }
+        
+        .form-group {
+            margin-bottom: 25px;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 10px;
+            font-weight: 600;
+            color: var(--primary);
+        }
+        
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 14px 18px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            font-size: 1rem;
+            transition: border 0.3s ease;
+        }
+        
+        .form-group input:focus,
+        .form-group textarea:focus {
+            border-color: var(--accent);
+            outline: none;
+            box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.1);
+        }
+        
+        .form-group textarea {
+            min-height: 150px;
+            resize: vertical;
+        }
+        
+        /* Footer */
+        footer {
+            background: var(--primary);
+            color: white;
+            text-align: center;
+            padding: 50px 0 30px;
+        }
+        
+        .social-links {
+            display: flex;
+            justify-content: center;
+            margin: 25px 0 35px;
+        }
+        
+        .social-link {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 12px;
+            color: white;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            font-size: 1.2rem;
+        }
+        
+        .social-link:hover {
+            background: var(--accent);
+            transform: translateY(-5px);
+        }
+        
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding-top: 25px;
+            margin-top: 25px;
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 992px) {
+            .about-content {
+                flex-direction: column;
+            }
+            
+            .contact-container {
+                flex-direction: column;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .nav-container {
+                flex-direction: column;
+            }
+            
+            .nav-links {
+                margin-top: 20px;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            
+            .nav-links li {
+                margin: 0 10px 10px;
+            }
+            
+            h1 {
+                font-size: 2.4rem;
+            }
+            
+            .tagline {
+                font-size: 1.2rem;
+            }
+            
+            .btn {
+                display: block;
+                margin: 10px auto;
+                width: 80%;
+                max-width: 250px;
+            }
+            
+            .btn-outline {
+                margin-left: 0;
+            }
+            
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            header {
+                padding: 70px 0;
+            }
+            
+            section {
+                padding: 60px 0;
+            }
+            
+            .profile-img {
+                width: 140px;
+                height: 140px;
+            }
+            
+            h1 {
+                font-size: 2rem;
+            }
+        }
+    </style>
 </head>
 <body>
-  <header class="site-header">
-    <div class="container">
-      <a href="index.html" class="brand">Vukona Mudanisi</a>
-      <nav class="nav">
-        <a href="index.html" class="active">Home</a>
-        <a href="about.html">About</a>
-        <a href="projects.html">Projects</a>
-        <a href="contact.html">Contact</a>
-        <a class="cv-btn" href="assets/Vukona_Mudanisi_cv.pdf" download>Download CV</a>
-        <button class="theme-toggle" aria-label="Toggle theme">
-          <svg class="sun" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"/>
-          </svg>
-          <svg class="moon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"/>
-          </svg>
-        </button>
-      </nav>
-    </div>
-  </header>
+    <!-- Header Section -->
+    <header id="home">
+        <div class="container">
+            <div class="header-content">
+                <img src="https://via.placeholder.com/160" alt="Vukona Mudanisi" class="profile-img">
+                <h1>Vukona Mudanisi</h1>
+                <p class="tagline">Information Technology Student & Aspiring Developer</p>
+                <a href="#projects" class="btn">View My Work</a>
+                <a href="#contact" class="btn btn-outline">Get In Touch</a>
+            </div>
+        </div>
+    </header>
 
-  <main class="container hero fade-in">
-    <section class="left" data-scroll>
-      <img class="profile" src="assets/profile.jpg" alt="Vukona Mudanisi - IT Professional" />
+    <!-- Navigation -->
+    <nav>
+        <div class="container nav-container">
+            <div class="logo">VM</div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#education">Education</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- About Section -->
+    <section id="about">
+        <div class="container">
+            <div class="section-title">
+                <h2>About Me</h2>
+                <p>Get to know more about my background and skills</p>
+            </div>
+            <div class="about-content">
+                <div class="about-text">
+                    <h3>Hello! I'm Vukona Mudanisi</h3>
+                    <p>I'm a passionate Information Technology student at Vaal University of Technology, currently completing my Diploma in IT. I have a strong foundation in programming, system software, and web development.</p>
+                    <p>With a cumulative GPA of 2.78, I've demonstrated consistent academic performance and a solid understanding of IT concepts. I'm particularly skilled in development software, programming logic, and system software, with distinctions in System Software modules.</p>
+                    
+                    <div class="skills">
+                        <span class="skill-tag">HTML/CSS</span>
+                        <span class="skill-tag">JavaScript</span>
+                        <span class="skill-tag">Programming Logic</span>
+                        <span class="skill-tag">System Software</span>
+                        <span class="skill-tag">Development Software</span>
+                        <span class="skill-tag">Web Development</span>
+                        <span class="skill-tag">Business Analysis</span>
+                        <span class="skill-tag">Information Systems</span>
+                    </div>
+                </div>
+            </div>
+        </div>
     </section>
-    <section class="right" data-scroll>
-      <h2>Hi, I'm <strong>Vukona Mudanisi</strong></h2>
-      <p>Information Technology Specialist & Software Developer with a Diploma in IT from Vaal University of Technology. I create innovative web applications, desktop tools, and mobile solutions that solve real-world problems.</p>
 
-      <ul class="contact-list">
-        <li><strong>Phone:</strong> 066 138 7363</li>
-        <li><strong>Email:</strong> <a href="mailto:vukonamdanisi6@gmail.com">vukonamdanisi6@gmail.com</a></li>
-        <li><strong>Location:</strong> Freedom Park, Devland, South Africa</li>
-      </ul>
-
-      <a class="cta" href="projects.html">
-        View My Projects
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-          <path d="M5 12h14M12 5l7 7-7 7"/>
-        </svg>
-      </a>
+    <!-- Education Section -->
+    <section id="education" class="education-section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Education</h2>
+                <p>My academic journey and achievements</p>
+            </div>
+            <div class="education-timeline">
+                <div class="timeline-item">
+                    <h3>Diploma in Information Technology</h3>
+                    <div class="timeline-meta">Vaal University of Technology | 2023 - 2025 <span class="gpa-badge">GPA: 2.78/4.0</span></div>
+                    <p><strong>Overall Average:</strong> 64.8% | <strong>Completion Rate:</strong> 85.2%</p>
+                    <p><strong>Key Subjects:</strong> Programming Logic, Development Software, System Software, Web Development, Business Analysis, Information Systems</p>
+                    <p><strong>Achievements:</strong> Distinctions in System Software 1.1 (91%) and System Software 1.2 (87%)</p>
+                </div>
+            </div>
+        </div>
     </section>
-  </main>
 
-  <section class="container highlights" data-scroll>
-    <h3>Technical Expertise</h3>
-    <div class="grid">
-      <div class="card">
-        <h4>Development</h4>
-        <p>Java, Python, JavaScript, React, Node.js, SQL, PHP, Django, React Native</p>
-      </div>
-      <div class="card">
-        <h4>Database & Tools</h4>
-        <p>MySQL, PostgreSQL, Git, GitHub, UML Design, ERD, System Architecture</p>
-      </div>
-      <div class="card">
-        <h4>Professional Skills</h4>
-        <p>Agile Methodology, Problem Solving, Team Collaboration, Project Management, Communication</p>
-      </div>
-    </div>
-  </section>
+    <!-- Projects Section -->
+    <section id="projects">
+        <div class="container">
+            <div class="section-title">
+                <h2>My Projects</h2>
+                <p>Some of the projects I've worked on</p>
+            </div>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <div class="project-img">💼</div>
+                    <div class="project-content">
+                        <h3>Business Analysis System</h3>
+                        <p>A comprehensive system for business analysis and requirements gathering developed as part of my coursework. Includes stakeholder analysis, requirements documentation, and process modeling.</p>
+                        <div class="project-links">
+                            <a href="#" class="project-link">View Project</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="project-card">
+                    <div class="project-img">🌐</div>
+                    <div class="project-content">
+                        <h3>Web Development Portfolio</h3>
+                        <p>A responsive portfolio website showcasing my skills and projects, built with HTML, CSS, and JavaScript. Features modern design, smooth animations, and mobile-friendly layout.</p>
+                        <div class="project-links">
+                            <a href="#" class="project-link">View Project</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="project-card">
+                    <div class="project-img">📊</div>
+                    <div class="project-content">
+                        <h3>Development Software Project</h3>
+                        <p>An application developed using modern development software tools and methodologies. Implements best practices in software development and user interface design.</p>
+                        <div class="project-links">
+                            <a href="#" class="project-link">View Project</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-  <section class="container skills-section" data-scroll>
-    <h3>Technical Skills</h3>
-    <div class="content">
-      <div class="skill-item">
-        <div class="skill-header">
-          <span class="skill-name">JavaScript & React</span>
-          <span class="skill-percentage">90%</span>
+    <!-- Contact Section -->
+    <section id="contact" class="contact-section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Get In Touch</h2>
+                <p>Feel free to reach out for collaborations or opportunities</p>
+            </div>
+            <div class="contact-container">
+                <div class="contact-info">
+                    <div class="contact-method">
+                        <div class="contact-icon">✉️</div>
+                        <div class="contact-details">
+                            <h3>Email</h3>
+                            <p>vukonamdanisi@gmail.com</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-method">
+                        <div class="contact-icon">📞</div>
+                        <div class="contact-details">
+                            <h3>Phone</h3>
+                            <p>066 138 7363</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-method">
+                        <div class="contact-icon">📍</div>
+                        <div class="contact-details">
+                            <h3>Location</h3>
+                            <p>Freedom Park, Devland, South Africa</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="contact-form">
+                    <form id="contactForm">
+                        <div class="form-group">
+                            <label for="name">Your Name</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="email">Your Email</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="subject">Subject</label>
+                            <input type="text" id="subject" name="subject" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="message">Your Message</label>
+                            <textarea id="message" name="message" required></textarea>
+                        </div>
+                        
+                        <button type="submit" class="btn">Send Message</button>
+                    </form>
+                </div>
+            </div>
         </div>
-        <div class="skill-bar">
-          <div class="skill-progress" data-width="90"></div>
-        </div>
-      </div>
-      <div class="skill-item">
-        <div class="skill-header">
-          <span class="skill-name">Python & Django</span>
-          <span class="skill-percentage">85%</span>
-        </div>
-        <div class="skill-bar">
-          <div class="skill-progress" data-width="85"></div>
-        </div>
-      </div>
-      <div class="skill-item">
-        <div class="skill-header">
-          <span class="skill-name">Java</span>
-          <span class="skill-percentage">80%</span>
-        </div>
-        <div class="skill-bar">
-          <div class="skill-progress" data-width="80"></div>
-        </div>
-      </div>
-      <div class="skill-item">
-        <div class="skill-header">
-          <span class="skill-name">Database Design</span>
-          <span class="skill-percentage">88%</span>
-        </div>
-        <div class="skill-bar">
-          <div class="skill-progress" data-width="88"></div>
-        </div>
-      </div>
-      <div class="skill-item">
-        <div class="skill-header">
-          <span class="skill-name">UI/UX Design</span>
-          <span class="skill-percentage">75%</span>
-        </div>
-        <div class="skill-bar">
-          <div class="skill-progress" data-width="75"></div>
-        </div>
-      </div>
-    </div>
-  </section>
+    </section>
 
-  <footer class="site-footer">
-    <div class="container">
-      <p>© 2025 Vukona Mudanisi — Crafting Digital Excellence</p>
-    </div>
-  </footer>
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>Vukona Mudanisi &copy; 2025. All rights reserved.</p>
+            <div class="social-links">
+                <a href="#" class="social-link">in</a>
+                <a href="#" class="social-link">GH</a>
+                <a href="#" class="social-link">TW</a>
+            </div>
+            <div class="footer-bottom">
+                <p>Hosted on GitHub Pages | Designed with passion</p>
+            </div>
+        </div>
+    </footer>
 
-  <!-- PWA Install Prompt -->
-  <div class="app-install-prompt" id="installPrompt" style="display: none;">
-    <p>Install this app for better experience?</p>
-    <button class="install-btn" id="installBtn">Install</button>
-    <button class="dismiss-btn" id="dismissBtn">Dismiss</button>
-  </div>
-
-  <script src="script.js"></script>
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+        
+        // Simple form handling
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Thank you for your message! I will get back to you soon.');
+            this.reset();
+        });
+        
+        // Navbar background on scroll
+        window.addEventListener('scroll', function() {
+            const nav = document.querySelector('nav');
+            if (window.scrollY > 50) {
+                nav.style.background = 'rgba(255, 255, 255, 0.95)';
+                nav.style.backdropFilter = 'blur(10px)';
+            } else {
+                nav.style.background = 'white';
+                nav.style.backdropFilter = 'none';
+            }
+        });
+    </script>
 </body>
 </html>
